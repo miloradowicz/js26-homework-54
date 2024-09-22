@@ -1,0 +1,18 @@
+.cell {
+  background-color: grey;
+}
+
+.cell:hover {
+  background-color: darkgray;
+}
+
+.cell.clicked {
+  background-color: transparent;
+}
+
+.cell.clicked.has-item {
+  background-image: url(../../../assets/goldbricks.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
