@@ -24,8 +24,16 @@ const App = () => {
   };
 
   const onCellClick = (row: number, col: number) => {
-    game.click(row, col);
-    updateState();
+    try {
+      game.click(row, col);
+      updateState();
+    } catch (err) {
+      if (err instanceof Error) {
+        alert(err.message);
+      } else {
+        console.error(err);
+      }
+    }
   };
 
   const onReset = () => {
