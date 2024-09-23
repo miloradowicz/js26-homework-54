@@ -45,7 +45,7 @@ const App = () => {
     <>
       <div className='card'>
         <Button caption='New game' onClick={onReset} />
-        <Board rows={rows} cols={cols} board={board} onCellClick={onCellClick} />
+        <Board active={!finished} rows={rows} cols={cols} board={board} onCellClick={onCellClick} />
         <Counter counter={counter} />
         {finished ? <Status status={GameStatus.Won} /> : null}
       </div>

@@ -7,10 +7,11 @@ interface BoardProps {
   rows: number;
   cols: number;
   board: CellState[];
+  active: boolean;
   onCellClick: (a1: number, a2: number) => void;
 }
 
-const Board: FC<BoardProps> = ({ rows, cols, board, onCellClick }) => {
+const Board: FC<BoardProps> = ({ rows, cols, board, active, onCellClick }) => {
   if (!Number.isInteger(rows) || !Number.isInteger(cols) || rows < 1 || cols < 1) {
     throw new Error('Rows and cols must be positive integers.');
   }
@@ -19,7 +20,11 @@ const Board: FC<BoardProps> = ({ rows, cols, board, onCellClick }) => {
   const colsRange = Array.from({ length: cols }, (_, i) => i);
 
   return (
-    <div className='board' style={{ gridTemplateRows: `repeat(${rows}, minmax(50px, 1fr))`, gridTemplateColumns: `repeat(${cols}, minmax(50px, 1fr))` }}>
+    <div
+      className='board'
+      data-active={active}
+      style={{ gridTemplateRows: `repeat(${rows}, minmax(50px, 1fr))`, gridTemplateColumns: `repeat(${cols}, minmax(50px, 1fr))` }}
+    >
       {rowsRange
         .map((x) =>
           colsRange.map((y) => (

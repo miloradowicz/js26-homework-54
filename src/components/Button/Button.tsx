@@ -1,4 +1,5 @@
 import { FC, MouseEventHandler } from 'react';
+import './Button.css';
 
 interface ButtonProps {
   caption: string;
@@ -7,7 +8,7 @@ interface ButtonProps {
 
 const Button: FC<ButtonProps> = ({ caption, onClick }) => {
   return (
-    <button type='button' onClick={onClick}>
+    <button type='button' className='btn' onClick={onClick}>
       {caption}
     </button>
   );

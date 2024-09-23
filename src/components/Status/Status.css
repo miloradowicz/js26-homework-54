@@ -1,0 +1,7 @@
+.status {
+  font-weight: bold;
+}
+
+.status-success {
+  color: limegreen;
+}
