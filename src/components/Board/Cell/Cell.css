@@ -1,5 +1,6 @@
 .cell {
   background-color: grey;
+  border-radius: 5px;
 }
 
 .cell:hover {
